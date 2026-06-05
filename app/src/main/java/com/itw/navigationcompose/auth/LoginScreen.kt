@@ -17,7 +17,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(
+    onNavigateToHome: (String) -> Unit
+) {
     var username by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
@@ -38,7 +40,7 @@ fun LoginScreen() {
             label = { Text("Password") }
         )
         Spacer(modifier = Modifier.fillMaxSize(0.04f))
-        Button(onClick = { /* TODO: Handle login */ }) {
+        Button(onClick = { onNavigateToHome(username) }) {
             Text("Login")
         }
     }
@@ -46,5 +48,7 @@ fun LoginScreen() {
 @Preview(showBackground  = true)
 @Composable
 fun LoginScreenPreview() {
-    LoginScreen()
+    LoginScreen(
+        onNavigateToHome = {}
+    )
 }

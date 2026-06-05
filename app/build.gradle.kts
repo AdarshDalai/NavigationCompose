@@ -6,16 +6,12 @@ plugins {
 
 android {
     namespace = "com.itw.navigationcompose"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.itw.navigationcompose"
         minSdk = 29
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 
@@ -74,4 +70,7 @@ dependencies {
 
     // JSON serialization library, works with the Kotlin serialization plugin
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+
+    //Icons pack
+    implementation(libs.androidx.compose.material.icons.extended)
 }
